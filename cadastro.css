@@ -1,0 +1,51 @@
+#form{
+    color: #757575;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    max-width: 500px;
+  margin: auto;
+  background: white;
+  overflow: hidden;
+  padding: 20px;
+  
+}
+#cx{
+display: flex; flex-direction: column;
+}
+body{
+    background-color: rgb(204, 204, 204);
+}
+header{
+    text-align: center; font-size: 30px; font-family: Arial, Helvetica, sans-serif;
+}
+#home{
+ margin-top: 340px; 
+ text-align: center;
+ font-family: sans-serif;
+ font-size: 18px;
+}
+label{
+    float: left; 
+    width: 100%; 
+    margin-bottom: 25px; 
+    position: relative;
+}
+input{
+    font: 15px/24px "Lato", Arial, sans-serif; 
+  color: #333; 
+  width: 100%; 
+  box-sizing: border-box; 
+  letter-spacing: 1px;
+  border: 1px solid #ccc; 
+  padding: 7px 14px 9px; 
+  transition: 0.4s; 
+}
+#botao{
+    background-color: #39f;
+    padding: 0.5em 1.3em;
+    color: #fff;
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+}
