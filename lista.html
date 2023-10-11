@@ -10,13 +10,13 @@
 </head>
 
 <body>
-    <div id="compra">
+    <div id="home">
 
         <header>
-           
+
             <a href="home.html"> Página Home </a>
             <hr>
-            Lista de Compras <br> 
+         <br>
 
         </header>
 
@@ -24,22 +24,50 @@
 
     <div id="itens">
         <h2>Itens:</h2>
-        <ul type="circle">
-            <li>Arroz</li>
-            <li>Café</li>
-            <li>Ovos</li>
-            <li>Leite</li>
-            <li>Feijão</li>
-            <li>Suco</li>
-            <li>Pão</li>
-            <li>Refrigerante</li>
-        </ul>
+        <table border="2" id="tb">
+            <tr>
+                <th>Código</th>
+                <th>Produto</th>
+                <th>Preço</th>
+            </tr>
+            <tr>
+                <td>001
+                <td>Arroz 1Kg</td>
+                <td>R$ 4.50</td>
+            </tr>
+            <tr>
+                <td>002
+                <td>Café 1Kg</td>
+                <td>R$ 6.50</td>
+            </tr>
+            <tr>
+                <td>003
+                <td>Leite 1L</td>
+                <td>R$ 4.80</td>
+            </tr>
+            <tr>
+                <td>004
+                <td>Feijão 1Kg</td>
+                <td>R$ 7.50</td>
+            </tr>
+            <tr>
+                <td>005
+                <td>Açucar 1Kg</td>
+                <td>R$ 3.50</td>
+            </tr>
+            <tr>
+                <td>006
+                <td>Macarrão 1Kg</td>
+                <td>R$ 4.30</td>
+            </tr>
+
+        </table>
     </div> <br>
 
     <div id="tabela">
         <form>
 
-            <label>Nome do Produto:</label> <br>
+            <label>Nome/Código do Produto:</label> <br>
             <input type="text">
             <input class="qnt" type="number" placeholder="qnt">
 
@@ -50,13 +78,33 @@
 
     </div>
 
-    <div id="total">
-        <table> 
-            <label> Seu Carrinho</label>
+    <h2>Lista de Compras</h2> <br>
+
+    <div id="compras">
+        <table id="tb2" border="1">
+            <tr>
+                <th>Código do Produto</th> 
+            </tr>
+            <tr>
+                <td>005</td>
+            </tr>
+            <tr>
+                <td>005</td>
+            </tr>
+            <tr>
+                <td>005</td>
+            </tr>
+            <tr>
+                <td>005</td>
+            </tr>
+            
+            <tr>
+                <th>SubTotal: R$ 14</th>
+            </tr>
 
         </table>
-    </div>
-   
+    </div> <br>
+
 
 
 
