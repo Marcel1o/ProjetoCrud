@@ -41,7 +41,7 @@ input{
   padding: 7px 14px 9px; 
   transition: 0.4s; 
 }
-#botao{
+.botao{
     background-color: #39f;
     padding: 0.5em 1.3em;
     color: #fff;
