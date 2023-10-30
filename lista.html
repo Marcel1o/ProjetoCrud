@@ -10,16 +10,8 @@
 </head>
 
 <body>
-    <div id="home">
-
-        <header>
-
-            <a href="home.html"> Página Home </a>
-            <hr>
-         <br>
-
-        </header>
-
+    <div id="cabecalho">
+        <a href="home.html"><img src="logo.png" id="foto"></a>
     </div>
 
     <div id="itens">
@@ -30,36 +22,8 @@
                 <th>Produto</th>
                 <th>Preço</th>
             </tr>
-            <tr>
-                <td>001
-                <td>Arroz 1Kg</td>
-                <td>R$ 4.50</td>
-            </tr>
-            <tr>
-                <td>002
-                <td>Café 1Kg</td>
-                <td>R$ 6.50</td>
-            </tr>
-            <tr>
-                <td>003
-                <td>Leite 1L</td>
-                <td>R$ 4.80</td>
-            </tr>
-            <tr>
-                <td>004
-                <td>Feijão 1Kg</td>
-                <td>R$ 7.50</td>
-            </tr>
-            <tr>
-                <td>005
-                <td>Açucar 1Kg</td>
-                <td>R$ 3.50</td>
-            </tr>
-            <tr>
-                <td>006
-                <td>Macarrão 1Kg</td>
-                <td>R$ 4.30</td>
-            </tr>
+        
+
 
         </table>
     </div> <br>
@@ -68,10 +32,10 @@
         <form>
 
             <label>Nome/Código do Produto:</label> <br>
-            <input type="text">
-            <input class="qnt" type="number" placeholder="qnt">
+            <input type="text" id="desc">
+            <input class="qnt" type="number" placeholder="qnt" id="quant">
 
-            <button>adicionar</button>
+            <button onclick=(adicionar())>adicionar</button>
 
         </form>
 
@@ -83,43 +47,72 @@
     <div id="compras">
         <table id="tb2" border="1">
             <tr>
-                <th>Código do Produto</th> 
+                <th>Código</th>
                 <th>Produto</th>
-                <th>Valor</th>
+                <th>Quantidade</th>
+                <th>Preço</th>
             </tr>
-            <tr>
-                <td>005</td>
-                <td>Açúcar</td>
-                <td>R$ 3.50</td>
-            </tr>
-            <tr>
-                <td>005</td>
-                <td>Açúcar</td>
-                <td>R$ 3.50</td>
-            </tr>
-            <tr>
-                <td>005</td>
-                <td>Açúcar</td>
-                <td>R$ 3.50</td>
-            </tr>
-            <tr>
-                <td>005</td>
-                <td>Açúcar</td>
-                <td>R$ 3.50</td>
-            </tr>
-           
-            
-            <tr>
-                <th>SubTotal:</th>
-                <td colspan="2"> R$ 14</td>
-            </tr>
-
         </table>
     </div> <br>
 
 
 
+<script>
+    const itens = [ 
+    {codigo:"001",nome:"Arroz 1kg",preço:4.50},
+    {codigo:"002",nome:"Café 1kg",preço:6.50},
+    {codigo:"003",nome:"Leite 1kg",preço:4.80},
+    {codigo:"004",nome:"Feijão 1kg",preço:7.50},
+    {codigo:"005",nome:"Açúcar 1kg",preço:3.50},
+    {codigo:"006",nome:"Macarrão 1kg",preço:4.30}]
+    var table = document.getElementById("tb")
 
+    itens.forEach((item,index)=>{ 
+        var row = table.insertRow(-1)
+        var cell1 = row.insertCell(0)
+        var cell2 = row.insertCell(1)
+        var cell3 = row.insertCell(2)
+
+        cell1.innerHTML = item.codigo
+        cell2.innerHTML = item.nome
+        cell3.innerHTML = item.preço})
+    
+    var listaCompras = [{codigo: "", nome:"" ,quantidade:0 , preço:0.0}]
+    var tabela = document.getElementById("tb2")
+    if(localStorage.getItem("minhaLista")){
+        listaCompras = [localStorage.getItem("minhaLista")]    
+    console.log(listaCompras)
+}
+
+    listaCompras.forEach((item,index)=>{ 
+        var row = tabela.insertRow(-1)
+        var cell1 = row.insertCell(0)
+        var cell2 = row.insertCell(1)
+        var cell3 = row.insertCell(2)
+        var cell4 = row.insertCell(3)
+
+        cell1.innerHTML = item.codigo
+        cell2.innerHTML = item.nome
+        cell3.innerHTML = item.quantidade
+        cell4.innerHTML = item.preço})
+
+    function adicionar(){
+        console.log("hehe")
+        var descrição = document.getElementById("desc").value
+        var quantidade = document.getElementById("quant").value
+        console.log("achei não mermão"+descrição)
+        itens.forEach((item,index)=>{
+            if(descrição == item.codigo || descrição == item.nome){
+                listaCompras.push({
+                    codigo: item.codigo, nome: item.nome, quantidade: item.quantidade, preço: item.preço 
+                })
+            localStorage.setItem("minhaLista",{listaCompras})
+            console.log(localStorage.getItem("minhaLista"))
+        }
+        }
+        )
+    }
+</script>
 </body>
 
 </html>

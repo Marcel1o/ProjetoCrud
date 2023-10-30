@@ -10,27 +10,27 @@
 
 <body>
     <header>
+        <div id="cabecalho">
+            <img src="logo.png" id="foto">
+        </div>    
         Formulário de Cadastro
     </header> <br> <br>
     <div id="form">
 
         <form>
             <div class="cx"> <label>Nome</label>
-                <input type="text" name="Nome" placeholder="Insira Seu nome">
+                <input type="text" placeholder="Insira Seu nome">
             </div>
-        
             <div class="cx"> <label>Senha</label>
-                <input type="password" name="Senha" placeholder="Insira Sua senha"> <br> <br> 
-
-                <input class="botao" type="submit" value="Finalizar">
+                <input type="password" placeholder="Insira Sua senha"> <br> <br>
             </div>
-            
+            <button id="botao" onclick= "window.open('lista.html')";> Enviar </button>
 
 
         </form>
     </div>
     <div id="home">
-        <a href="home.html"> Voltar </a>
+        <a class="p1" href="home.html"> Voltar </a>
     </div>
 </body>
 
