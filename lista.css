@@ -1,8 +1,11 @@
-#home {
-    font-size: 28px;
+#cabecalho{
     text-align: center;
+    #foto{
+        max-width: 250px;
+        max-height: 250px;
+        border-radius: 50%;
+    }
 }
-
 .qnt {
     width: 42px;
 }
@@ -11,7 +14,9 @@
      margin-left: 550px; 
 }
 body{
-    background-color: rgb(204, 204, 204);
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgb(180, 252, 220) 0%, rgb(19, 211, 160) 35%, rgb(60, 12, 190) 100%);
+
 }
 
 button{
