@@ -52,7 +52,7 @@ input{
   padding: 7px 14px 9px; 
   transition: 0.4s; 
 }
-#botao{
+#botãoCadastro{
     background-color: #39f;
     padding: 0.5em 1.3em;
     color: #fff;
@@ -74,3 +74,4 @@ input{
     background-color: rgb(112, 236, 184);
     color: white;
    }
+
