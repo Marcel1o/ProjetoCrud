@@ -1,0 +1,44 @@
+#cabecalho{
+    border-radius: 50px;
+    text-align: center;
+    #foto{
+        max-width: 250px;
+        max-height: 250px;
+        border-radius: 50%;
+    }
+   .p1:link, .p1:visited{
+    background-color: white ;
+    color: black;
+    border: 2px solid green;
+    padding: 5px;
+    text-align: center;
+    display: inline-block;
+   }
+   .p1:hover,.p1:active{
+    background-color: rgb(112, 236, 184);
+    color: white;
+   }
+}
+#loc{
+    text-align: center;
+}
+
+#func{
+    text-align: left;
+    font-size: 18px;
+}
+#login{
+    text-align: right;
+     font-size:18px;
+}
+body{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgb(180, 252, 220) 0%, rgb(19, 211, 160) 35%, rgb(60, 12, 190) 100%);
+
+}
+h1{
+    color:#757575
+}
+a{
+    text-decoration: none;
+}
