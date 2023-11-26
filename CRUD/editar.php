@@ -23,6 +23,7 @@
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>Editar</title>
+                <link rel="stylesheet" href="../STYLE/editar.css">
             </head>
             <body>
             <div class='modal-body'>
@@ -32,13 +33,12 @@
                                 </div>
                                 <div class='item-altera'>
                                     <form  method='post'>
-                                        <label for='Quantidade'>Quantidade:</label>
+                                        <label for='Quantidade'>Quantidade:</label class='label-style'>
                                     <?php echo  "<input type='number' id='Quantidade' name='Quantidade' required value=".$Quantidade.">" ?>
-                                        <input type='submit' value='Submit'>
+                                        <input type='submit' value='Submit' data-dismiss="modal" >
                                     </form>
                                 </div>
                             </div>
-     
             </body>
             </html>
         <?php
@@ -49,7 +49,12 @@
                     $sqlUpdate = "UPDATE produtos set Quantidade='$Quantidade' WHERE id='$id'";
                     require_once('conexao.php');
                     $resultUpdate = $connection->query($sqlUpdate);
-                    header('Location: lista.php');
+                    echo '<script type="text/javascript">';
+                    echo 'parent.closeIframe()';
+                    echo '</script>';
                 }   
     }
 ?>
+
+</body>
+</html>

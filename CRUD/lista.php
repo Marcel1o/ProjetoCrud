@@ -28,7 +28,6 @@
     <div class="lista-container">
 
 <?php
-
     $items = array(['nome' => 'Arroz 1kg' , 'imagem' => '../arroz.png','quantidade' => '1' , 'preco' => '5',],
         ['nome' => 'Coca Cola 2l' ,'imagem' => '../coca.png','quantidade' => '1', 'preco' => '10'],
         ['nome' => 'Cuscuz' ,'imagem' => '../cuscuz.png','quantidade' => '1', 'preco' => '2'],
@@ -69,46 +68,64 @@
             //nome
             //quantidade
             //preco
-
-            echo '<p>Nome: '.$value['Nome'].' | Quantidade: '.$value['Quantidade'].' | Preço: R$'.($value['Quantidade']*(float)$value['Preco']).'<a href="?editar='.$value['id'].'" data-toggle="modal" data-target="#exempleModal"> Editar </a>  <a class="btn btn-sm btn-danger" href="deletar.php?id='.$value['id'].'" title="Deletar">Excluir</a></p>';
-            echo '<hr>';
-            
-        }
-        if(isset($_GET['editar'])){
-            $id= (float) $_GET['editar'];
-            echo "<script>console.log(".$id.");</script>";
             ?>
+            <p>Nome: <?php echo $value['Nome'] ?> | Quantidade: <?php echo $value['Quantidade'] ?>| Preço: R$ <?php echo ($value['Quantidade']*(float)$value['Preco']) ?><a class="btn btn-sm btn-danger" href="?editar=<?php echo $value['id'] ?>"> Editar </a>  <a class="btn btn-sm btn-danger" href="deletar.php?id=<?php echo $value['id'] ?>" title="Deletar">Excluir</a></p>';
+            <hr>
+            <div>TOTAL= </div>
+    <?php
+        }
+        ?>
+    
+    <?php
+        if(!empty($_GET['editar'])){
+            $id = (float) $_GET['editar'];
+            $showModal = true;
+            if(!empty($showModal)){
+                // CALL MODAL HERE
+                echo '<script type="text/javascript">
+                    $(document).ready(function(){
+                        $("#editModal").modal("show");
+                    });
+                </script>';
+            } 
+        ?>
            
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
-                    <div class="modal-content">
+                    <div class="modal-content" >
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <h5 class="modal-title" id="editModalLabel">Atualizar item</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="editar.php" id="iframe"></iframe>
+                        <iframe id="myiframe" class="embed-responsive-item" src="editar.php?id=<?php echo $id ?>" id="iframe"></iframe>
                         </div>
                     </div>
+                    <div id="hiddendiv" style="display:none">
+                        Item atualizado, pode fechar essa janela
+                    </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button id="closeButton" type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Close</button>
                     </div>
                     </div>
                 </div>
             </div>
             
-            <?php
-        }      
-            ?>
+        <?php
+        }
+        ?>
         
 <script>
-    $(document).on('click','a[data-toggle]',function (e)){
-        e.preventDefault();
-        $("#iframe").attr("src",this.href)
-    }
+    function closeIframe() {
+        var iframe = document.getElementById('myiframe');
+        iframe.parentNode.removeChild(iframe);
+        document.getElementById("hiddendiv").style.display="";
+        $showModal = false;
+        location.reload();
+        };
 </script> 
 </body>
 </html>
