@@ -1,0 +1,37 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+h1{
+    text-align: center; background-color: rgb(255, 255, 255);
+    ;
+}
+h2{text-align: center;
+width: 100%;
+padding: 20px;
+color: white;}
+.lista-container{
+    display: flex;
+}
+.produto{
+    width: 30%;
+}
+.produto img{
+    max-width: 100%;
+    width: 250px;
+    margin-left: 70px;
+    
+}
+.produto a{
+    color: white;
+    display:block;
+    width: 100%;
+    padding: 10px;
+    background-color: #5fb382; 
+    text-align: center;
+    text-decoration: none;
+}
+
+body{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgb(180, 252, 220) 0%, rgb(19, 211, 160) 35%, rgb(60, 12, 190) 100%) fixed;
+   
+}
+

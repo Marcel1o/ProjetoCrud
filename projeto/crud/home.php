@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Página Home</title>
 
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="../styles/home.css">
     <script src="home.js"> </script>
 
 </head>
@@ -14,13 +14,12 @@
 
 
     <div id="cabecalho">
-       <h1> Super mercado Absoluto </h1> <br> <br>
-
+       <img src="logo.png" id="foto">
+       
+       <div id="func">
+        <a class="p1" href="cadastro.php"> Cadastre-se</a> 
+        </div>
     </div>
-    <div id="func">
-        <a class="p1" href="cadastro.html"> Cadastre-se</a> 
-    </div>
-
     <hr>
 
 <div id="vtg">
@@ -37,7 +36,7 @@
 <div id="avaliacoes">
     <h2>Nossas Avaliações</h2>
     <em>"Gostei demais do atendimento, foi super rápido"</em> <br>
-    <strong>Dilma Roussef</strong>
+    <strong>Gordinho do povo</strong>
     <hr />
     <em>"Ambiente agradável e climatizado, gostei bastante"</em> <br>
     <strong>Fernando Diniz</strong>
